@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan Shorts · 日本生活・旅游短片精听</title>
+<meta name="description" content="用Wikimedia Commons上CC授权的真实日语视频精听——左边真实画面、右边同步日语原文+假名注音+中文翻译字幕，每条视频还配完整台词、语法点、词汇地名美食解释。">
+<link rel="canonical" href="https://shorts.maysuns.uk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Japan Shorts · 日本生活・旅游短片精听">
+<meta property="og:description" content="用真实日语视频精听——完整台词+语法点+词汇地名美食解释">
+<meta property="og:url" content="https://shorts.maysuns.uk/">
+<style>
+  :root {
+    --accent:#c8102e;      /* NHK红 */
+    --accent2:#ff8f1f;     /* COOKPAD橙，用于次要标签 */
+    --bg:#f6f5f2;
+    --card:#ffffff;
+    --border:#e6e3dd;
+    --text:#1c1c1c;
+    --sub:#767267;
+    --nav-w:230px;
+  }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,"Segoe UI","Microsoft YaHei","Hiragino Sans",sans-serif; margin:0; background:var(--bg); color:var(--text); }
+  a { color:inherit; }
+
+  /* ── 顶部sticky标题栏 ───────────────────────── */
+  #topbar { position:sticky; top:0; z-index:20; background:var(--card); border-bottom:2px solid var(--accent); padding:10px 24px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  #topbar .logo { font-size:1.15em; font-weight:700; text-decoration:none; }
+  #topbar .logo .jp { color:var(--accent); }
+  #topbar nav { display:flex; gap:16px; flex-wrap:wrap; font-size:0.92em; margin-left:auto; }
+  #topbar nav a { text-decoration:none; color:var(--sub); }
+  #topbar nav a:hover, #topbar nav a.current { color:var(--accent); font-weight:600; }
+
+  main#content { max-width:1100px; margin:0 auto; padding:26px 24px 80px; }
+  section { margin-bottom:56px; scroll-margin-top:70px; }
+  section h2 { font-size:1.3em; margin:0 0 6px; border-left:5px solid var(--accent); padding-left:10px; }
+  section .section-sub { color:var(--sub); font-size:0.88em; margin:0 0 20px 15px; }
+
+  /* ── 首页 hero ───────────────────────── */
+  .hero { background:linear-gradient(135deg,#1c1c1c,#3a2420); color:#fff; border-radius:16px; padding:34px 32px; margin-bottom:22px; }
+  .hero h2 { border:none; padding:0; font-size:1.6em; margin:0 0 10px; }
+  .hero p { color:#e8e2da; line-height:1.85; font-size:0.98em; max-width:760px; margin:0 0 8px; }
+  .hero .method-name { color:var(--accent2); font-weight:700; }
+  .hero-link { display:inline-block; margin-top:14px; color:var(--accent2); font-weight:700; text-decoration:none; }
+  .hero-link:hover { text-decoration:underline; }
+  .stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; margin-top:20px; }
+  .stat { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px 18px; }
+  .stat .num { font-size:1.7em; font-weight:700; color:var(--accent); }
+  .stat .label { color:var(--sub); font-size:0.82em; margin-top:2px; }
+
+  /* ── 首页三块简介卡（精选短片/精聴学习法/素材与版权，每块短介绍+link） ── */
+  .overview-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+  .ov-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; text-decoration:none; color:inherit; transition:transform .15s, box-shadow .15s; }
+  .ov-card:hover { transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,.08); }
+  .ov-card h4 { margin:0 0 8px; font-size:1.05em; }
+  .ov-card p { color:var(--sub); font-size:0.88em; line-height:1.7; margin:0 0 10px; }
+  .ov-card .ov-link { color:var(--accent2); font-weight:700; font-size:0.88em; }
+
+  /* ── 卡片网格（COOKPAD风格） ───────────────── */
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.05); transition:transform .15s, box-shadow .15s; text-decoration:none; display:block; color:inherit; }
+  .card.playable { cursor:pointer; }
+  .card.playable:hover { transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,.10); }
+  .thumb-wrap { position:relative; aspect-ratio:16/9; background:#111; overflow:hidden; }
+  .thumb-wrap img { width:100%; height:100%; object-fit:cover; display:block; }
+  .thumb-wrap .play-badge { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.15); opacity:0; transition:opacity .15s; }
+  .card.playable:hover .play-badge { opacity:1; }
+  .play-badge .circle { width:56px; height:56px; border-radius:50%; background:rgba(255,255,255,0.92); display:flex; align-items:center; justify-content:center; font-size:1.4em; color:var(--accent); }
+  .thumb-wrap.placeholder { display:flex; align-items:center; justify-content:center; background:repeating-linear-gradient(135deg,#2a2a2a,#2a2a2a 10px,#242424 10px,#242424 20px); color:#999; font-size:2em; }
+  .card-body { padding:13px 15px 15px; }
+  .card-body h3 { font-size:1em; margin:0 0 8px; line-height:1.4; }
+  .badge-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+  .badge { font-size:0.72em; padding:2px 9px; border-radius:20px; border:1px solid var(--border); color:var(--sub); }
+  .badge.license { background:#eef7ee; color:#2a7a2a; border-color:#cfe8cf; }
+  .badge.done { background:#fdeceb; color:var(--accent); border-color:#f4c9c5; }
+  .badge.queued { background:#fff6e8; color:#a35b00; border-color:#f0d9a8; }
+  .card-body .meta { color:var(--sub); font-size:0.82em; margin:0; }
+
+  footer { text-align:center; color:var(--sub); font-size:0.8em; padding:30px 0 50px; }
+
+  @media (max-width:900px) {
+    #topbar { padding:8px 16px; }
+    main#content { padding:18px 16px 60px; }
+    .hero { padding:22px 20px; }
+  }
+  /* 手机端：4格数据卡片不是必读信息，先隐藏，让视频网格更快出现在第一屏
+     （req99「B方案」：同一份HTML，CSS按屏幕宽度精简，不拆两份网页维护） */
+  @media (max-width:600px) {
+    .stats-row { display:none; }
+  }
+</style></head>
+<body>
+
+<div id="topbar">
+  <a class="logo" href="index.html"><span class="jp">Japan</span> Shorts</a>
+  <nav>
+    <a href="index.html" class="current">首页</a>
+    <a href="videos.html">精选短片</a>
+    <a href="method.html">精聴学习法</a>
+    <a href="sources.html">素材与版权</a>
+  </nav>
+</div>
+
+<main id="content">
+
+  <section id="home">
+    <div class="hero">
+      <h2>用真实日语视频，练一双能听懂日语的耳朵</h2>
+      <p>
+        真实日语旅行视频精听——<span class="method-name">「左边看真实视频、右边跟实时字幕」</span>，
+        日语原文+假名注音+中文翻译。素材来自 Wikimedia Commons 的CC授权视频，不是教材配音。
+      </p>
+      <a class="hero-link" href="videos.html">👇 看已经做好的短片 →</a>
+      <div class="stats-row">
+        <div class="stat"><div class="num">1</div><div class="label">已完整制作（含语法+词汇）</div></div>
+        <div class="stat"><div class="num">2</div><div class="label">已产出成片，功能陆续补充中</div></div>
+        <div class="stat"><div class="num">700+</div><div class="label">Commons上可用的CC授权日语视频</div></div>
+        <div class="stat"><div class="num">CC BY</div><div class="label">当前素材授权类型</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="overview-row">
+      <a class="ov-card" href="videos.html">
+        <h4>🎬 精选短片</h4>
+        <p>真实日语视频，配日语原文+假名注音+中文翻译字幕，点开看完整台词。</p>
+        <span class="ov-link">查看短片 →</span>
+      </a>
+      <a class="ov-card" href="method.html">
+        <h4>📖 精聴学习法</h4>
+        <p>「左边看真实视频、右边跟实时字幕」这套精聴方法具体怎么用、为什么有效。</p>
+        <span class="ov-link">了解方法 →</span>
+      </a>
+      <a class="ov-card" href="sources.html">
+        <h4>📄 素材与版权</h4>
+        <p>视频来源、CC授权类型、字幕识别可能有误的地方，如实说明。</p>
+        <span class="ov-link">查看说明 →</span>
+      </a>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>Japan Shorts — 日本生活・旅游短片精听 · 素材来源 Wikimedia Commons（CC BY 3.0）
+  <span style="margin-left:10px;">
+    <span id="stats-views"></span>
+    <button id="stats-like-btn" style="margin-left:6px;cursor:pointer;">👍</button>
+  </span>
+  <div style="margin-top:10px;">
+    <a href="https://buy.stripe.com/test_00weV60ru61i1gd25h7kc0h" target="_blank" rel="noopener"
+       style="color:var(--sub);text-decoration:underline;">☕ Support this project</a>
+  </div>
+  <div id="supporters" style="margin-top:6px;font-size:0.9em;">🙏 Thanks to our supporters: <span style="opacity:.6;">nobody yet — be the first!</span></div>
+</footer>
+
+<script src="assets/i18n.js"></script>
+</body></html>

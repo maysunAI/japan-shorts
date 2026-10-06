@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>精选短片 — Japan Shorts</title>
+<meta name="description" content="真实日语视频精听短片列表——配日语原文+假名注音+中文翻译字幕，点开看完整台词。素材来自 Wikimedia Commons 的CC授权视频。">
+<link rel="canonical" href="https://shorts.maysuns.uk/videos.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="精选短片 — Japan Shorts">
+<meta property="og:description" content="真实日语视频精听短片列表——完整台词+语法点+词汇地名美食解释">
+<meta property="og:url" content="https://shorts.maysuns.uk/videos.html">
+<style>
+  :root {
+    --accent:#c8102e;      /* NHK红 */
+    --accent2:#ff8f1f;     /* COOKPAD橙，用于次要标签 */
+    --bg:#f6f5f2;
+    --card:#ffffff;
+    --border:#e6e3dd;
+    --text:#1c1c1c;
+    --sub:#767267;
+  }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,"Segoe UI","Microsoft YaHei","Hiragino Sans",sans-serif; margin:0; background:var(--bg); color:var(--text); }
+  a { color:inherit; }
+
+  #topbar { position:sticky; top:0; z-index:20; background:var(--card); border-bottom:2px solid var(--accent); padding:10px 24px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  #topbar .logo { font-size:1.15em; font-weight:700; text-decoration:none; }
+  #topbar .logo .jp { color:var(--accent); }
+  #topbar nav { display:flex; gap:16px; flex-wrap:wrap; font-size:0.92em; margin-left:auto; }
+  #topbar nav a { text-decoration:none; color:var(--sub); }
+  #topbar nav a:hover, #topbar nav a.current { color:var(--accent); font-weight:600; }
+
+  main#content { max-width:1100px; margin:0 auto; padding:26px 24px 80px; }
+  main#content h1 { font-size:1.3em; margin:0 0 6px; border-left:5px solid var(--accent); padding-left:10px; }
+  main#content .section-sub { color:var(--sub); font-size:0.88em; margin:0 0 20px 15px; }
+
+  /* ── 卡片网格（COOKPAD风格） ───────────────── */
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.05); transition:transform .15s, box-shadow .15s; text-decoration:none; display:block; color:inherit; }
+  .card.playable { cursor:pointer; }
+  .card.playable:hover { transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,.10); }
+  .thumb-wrap { position:relative; aspect-ratio:16/9; background:#111; overflow:hidden; }
+  .thumb-wrap img { width:100%; height:100%; object-fit:cover; display:block; }
+  .thumb-wrap .play-badge { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.15); opacity:0; transition:opacity .15s; }
+  .card.playable:hover .play-badge { opacity:1; }
+  .play-badge .circle { width:56px; height:56px; border-radius:50%; background:rgba(255,255,255,0.92); display:flex; align-items:center; justify-content:center; font-size:1.4em; color:var(--accent); }
+  .thumb-wrap.placeholder { display:flex; align-items:center; justify-content:center; background:repeating-linear-gradient(135deg,#2a2a2a,#2a2a2a 10px,#242424 10px,#242424 20px); color:#999; font-size:2em; }
+  .card-body { padding:13px 15px 15px; }
+  .card-body h3 { font-size:1em; margin:0 0 8px; line-height:1.4; }
+  .badge-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+  .badge { font-size:0.72em; padding:2px 9px; border-radius:20px; border:1px solid var(--border); color:var(--sub); }
+  .badge.license { background:#eef7ee; color:#2a7a2a; border-color:#cfe8cf; }
+  .badge.done { background:#fdeceb; color:var(--accent); border-color:#f4c9c5; }
+  .badge.queued { background:#fff6e8; color:#a35b00; border-color:#f0d9a8; }
+  .card-body .meta { color:var(--sub); font-size:0.82em; margin:0; }
+
+  footer { text-align:center; color:var(--sub); font-size:0.8em; padding:30px 0 50px; }
+
+  @media (max-width:900px) {
+    #topbar { padding:8px 16px; }
+    main#content { padding:18px 16px 60px; }
+  }
+</style></head>
+<body>
+
+<div id="topbar">
+  <a class="logo" href="index.html"><span class="jp">Japan</span> Shorts</a>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="videos.html" class="current">精选短片</a>
+    <a href="method.html">精聴学习法</a>
+    <a href="sources.html">素材与版权</a>
+  </nav>
+</div>
+
+<main id="content">
+  <h1>精选短片</h1>
+  <p class="section-sub">点击卡片进入独立详情页；灰色卡片是排队中、还没轮到制作的素材。</p>
+  <div class="grid" id="videoGrid"></div>
+</main>
+
+<footer>Japan Shorts — 日本生活・旅游短片精听 · 素材来源 Wikimedia Commons（CC BY 3.0）</footer>
+
+<script>
+const VIDEOS = [
+  { title: '【日帰り九州】ANAで行く博多 うまい物を食って帰る', status: 'done', duration: '21分45秒(分6段)', license: 'CC BY 3.0', segments: 495, thumb: 'assets/thumb_hakata.jpg', href: 'video-hakata.html' },
+  { title: '【札幌新名物】犬の焼きいも屋さんに行ってきた 犬やきいも', status: 'done', duration: '10分1秒(分3段)', license: 'CC BY 3.0', segments: 375, thumb: 'assets/thumb_dog.jpg', href: 'video-dog.html' },
+  { title: '東京No1の繁華街 銀座を探検', status: 'done', duration: '26分19秒(分7段)', license: 'CC BY 3.0', segments: 1170, thumb: 'assets/thumb_ginza.jpg', href: 'video-ginza.html' },
+  { title: '秋葉原めぐり メイドカフェに初めて入店', status:'queued', duration:'21分44秒', license:'CC BY 3.0' },
+  { title: '放課後に横浜中華街で食べ歩き！', status:'queued', duration:'12分1秒', license:'CC BY 3.0' },
+  { title: '【1,000円で小旅行】お台場 激安観光', status:'queued', duration:'19分29秒', license:'CC BY 3.0' },
+  { title: '【5000円旅行】宇都宮ぎょうざの旅', status:'queued', duration:'32分10秒', license:'CC BY 3.0' },
+  { title: '【そうだ、仙台行こう】牛タン食べたらすぐ帰宅する仙台旅行', status:'queued', duration:'12分25秒', license:'CC BY 3.0' },
+  { title: '【奈良公園】鹿せんべいの売上が減少したと聞き、散布してきた', status:'queued', duration:'14分53秒', license:'CC BY 3.0' }
+];
+
+const grid = document.getElementById('videoGrid');
+VIDEOS.forEach(v => {
+  const playable = v.status === 'done' && v.href;
+  const thumbHtml = (v.status === 'done')
+    ? `<div class="thumb-wrap"><img src="${v.thumb}" alt="${v.title}">${playable ? '<div class="play-badge"><div class="circle">▶</div></div>' : ''}</div>`
+    : `<div class="thumb-wrap placeholder">⏳</div>`;
+  const statusBadge = v.status === 'done'
+      ? `<span class="badge done">✅ 已完整制作</span>`
+      : `<span class="badge queued">⏳ 排队中</span>`;
+  const segMeta = v.segments ? `　·　字幕${v.segments}段` : '';
+  const inner = `
+    ${thumbHtml}
+    <div class="card-body">
+      <h3>${v.title}</h3>
+      <div class="badge-row">${statusBadge}<span class="badge license">${v.license}</span></div>
+      <p class="meta">时长 ${v.duration}${segMeta}</p>
+    </div>`;
+  if (playable) {
+    const a = document.createElement('a');
+    a.className = 'card playable';
+    a.href = v.href;
+    a.innerHTML = inner;
+    grid.appendChild(a);
+  } else {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = inner;
+    grid.appendChild(div);
+  }
+});
+</script>
+
+<script src="assets/i18n.js"></script>
+</body></html>

@@ -1,0 +1,227 @@
+<!--
+  video-hakata.html —「日帰り九州 ANAで行く博多」独立详情页（req40，2026-09-22新建）。
+  这是"每个视频一个独立页面"新架构下的旗舰示范页——6段完整字幕+真实语法点+真实词汇/
+  地名/美食解释，全部基于这条视频真实的日语原文整理，不是编的示例内容。
+-->
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日帰り九州 ANAで行く博多 — Japan Shorts</title>
+<meta name="description" content="真实日语旅行视频精听：博多机场、长浜拉面元祖之争、栉田神社、福冈塔——6段完整字幕+日语语法点+词汇地名解释。CC BY 3.0授权素材。">
+<link rel="canonical" href="https://shorts.maysuns.uk/video-hakata.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="日帰り九州 ANAで行く博多 — Japan Shorts">
+<meta property="og:description" content="真实日语旅行视频精听，6段完整字幕+语法点+词汇解释">
+<meta property="og:url" content="https://shorts.maysuns.uk/video-hakata.html">
+<style>
+  :root {
+    --accent:#c8102e; --accent2:#ff8f1f; --bg:#f6f5f2; --card:#ffffff;
+    --border:#e6e3dd; --text:#1c1c1c; --sub:#767267;
+  }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,"Segoe UI","Microsoft YaHei","Hiragino Sans",sans-serif; margin:0; background:var(--bg); color:var(--text); }
+  a { color:inherit; }
+  #topbar { position:sticky; top:0; z-index:20; background:var(--card); border-bottom:2px solid var(--accent); padding:10px 24px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  #topbar .logo { font-size:1.15em; font-weight:700; text-decoration:none; }
+  #topbar .logo .jp { color:var(--accent); }
+  #topbar nav { display:flex; gap:16px; flex-wrap:wrap; font-size:0.92em; margin-left:auto; }
+  #topbar nav a { text-decoration:none; color:var(--sub); }
+  #topbar nav a:hover, #topbar nav a.current { color:var(--accent); font-weight:600; }
+  main { max-width:1200px; margin:0 auto; padding:26px 20px 70px; }
+  .hero h1 { font-size:1.55em; margin:0 0 8px; }
+  .hero .badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+  .badge { font-size:0.78em; padding:3px 11px; border-radius:20px; border:1px solid var(--border); color:var(--sub); }
+  .badge.license { background:#eef7ee; color:#2a7a2a; border-color:#cfe8cf; }
+  .hero p.lead { color:var(--sub); line-height:1.8; max-width:760px; }
+
+  #player-wrap { background:#000; border-radius:14px; overflow:hidden; margin:18px 0; }
+  #player-wrap video { width:100%; display:block; max-height:70vh; background:#000; }
+  .seg-tabs { display:flex; gap:8px; overflow-x:auto; padding:14px 0 4px; }
+  .seg-tabs button { flex:none; border:1px solid var(--border); background:var(--card); border-radius:10px; padding:8px 14px; font-size:0.86em; cursor:pointer; color:var(--text); }
+  .seg-tabs button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .seg-meta { color:var(--sub); font-size:0.85em; margin:4px 0 20px; }
+
+  .feature-tabs { display:flex; gap:8px; margin:26px 0 14px; border-bottom:2px solid var(--border); }
+  .feature-tabs button { border:none; background:none; padding:10px 16px; font-size:0.95em; cursor:pointer; color:var(--sub); border-bottom:3px solid transparent; margin-bottom:-2px; }
+  .feature-tabs button.active { color:var(--accent); border-bottom-color:var(--accent); font-weight:600; }
+
+  .transcript-line { padding:10px 0; border-bottom:1px solid var(--border); }
+  .transcript-line .ts { color:var(--sub); font-size:0.78em; font-family:Consolas,monospace; }
+  .transcript-line .jp { font-size:1.02em; margin:3px 0; line-height:1.7; }
+  .transcript-line .jp ruby rt { font-size:0.62em; color:var(--sub); }
+  .transcript-line .zh { color:var(--sub); font-size:0.9em; }
+
+  .g-card, .v-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px 18px; margin-bottom:12px; }
+  .g-card h4, .v-card h4 { margin:0 0 6px; font-size:1.02em; }
+  .g-card h4 .pt { color:var(--accent); font-weight:700; }
+  .g-card .quote, .v-card .quote { background:#fdeceb; border-radius:8px; padding:8px 12px; font-size:0.9em; margin:8px 0; }
+  .g-card .explain, .v-card .explain { line-height:1.8; font-size:0.94em; }
+  .g-card .link, .v-card .link { font-size:0.85em; margin-top:8px; display:inline-block; }
+  .v-card .food-img { max-width:100%; border-radius:8px; margin-top:8px; }
+  .v-card .kind { font-size:0.74em; padding:2px 9px; border-radius:20px; background:#fff6e8; color:#a35b00; border:1px solid #f0d9a8; }
+
+  .warn-box { background:#fffaf0; border:1px solid #f0c98a; border-radius:10px; padding:12px 16px; font-size:0.9em; line-height:1.8; margin:14px 0; }
+  .warn-box b { color:#a35b00; }
+
+  footer { text-align:center; color:var(--sub); font-size:0.8em; padding:36px 0 50px; border-top:1px solid var(--border); margin-top:40px; }
+  footer .lic { max-width:640px; margin:0 auto; line-height:1.9; }
+
+  @media (max-width:760px) {
+    #topbar { padding:8px 14px; }
+    main { padding:18px 14px 50px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <a class="logo" href="index.html"><span class="jp">Japan</span> Shorts</a>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="videos.html">精选短片</a>
+    <a href="method.html">精聴学习法</a>
+    <a href="sources.html">素材与版权</a>
+  </nav>
+</div>
+
+<main>
+  <div class="hero">
+    <h1>【日帰り九州】ANAで行く博多 うまい物を食って帰る</h1>
+    <div class="badges">
+      <span class="badge license">CC BY 3.0 · Suit Travel</span>
+      <span class="badge">21分45秒 · 分成6段</span>
+      <span class="badge">495句字幕</span>
+    </div>
+    <p class="lead">
+      跟着真实旅行视频精听一段日语：羽田早班飞机→博多机场→一番市場的寿司→
+      长浜拉面元祖之争→栉田神社→中洲→福冈塔全景→深夜回程。每一段都配完整
+      日语原文+假名注音+中文翻译三行字幕，下面还有从这条视频真实内容里整理出的
+      语法点和词汇/地名/美食解释。
+    </p>
+  </div>
+
+  <div id="player-wrap">
+    <video id="player" controls preload="none"></video>
+  </div>
+  <div class="seg-tabs" id="segTabs"></div>
+  <p class="seg-meta" id="segMeta"></p>
+
+  <div class="feature-tabs" id="featureTabs">
+    <button data-f="transcript" class="active">📝 完整台词</button>
+    <button data-f="grammar">📖 语法点</button>
+    <button data-f="vocab">🗺️ 词汇 / 地名 / 美食</button>
+  </div>
+  <div id="featureBody"></div>
+
+  <div class="warn-box">
+    ⚠️ <b>如实说明</b>：字幕由本地语音识别(faster-whisper)自动生成，未经人工逐句校对，
+    可能有听错的地方（本页面已知的一处：博多两次被自动听成"墓多"/山笠祭典被听成
+    "ダッシュ"，这类错误原样保留在字幕里，供你自己判断，不影响精听练习）。语法点和
+    词汇解释是基于这段真实对话内容整理的，用于帮助理解，不是权威语法教材，更系统的
+    学习建议配合下方"精聴学习法"页面一起看。
+  </div>
+</main>
+
+<footer>
+  <div class="lic">
+    素材来源：Suit Travel（Wikimedia Commons）· 授权：CC BY 3.0<br>
+    原视频：<a href="https://commons.wikimedia.org/wiki/File:%E3%80%90%E6%97%A5%E5%B8%B0%E3%82%8A%E4%B9%9D%E5%B7%9E%E3%80%91ANA%E3%81%A7%E8%A1%8C%E3%81%8F%E5%8D%9A%E5%A4%9A_%E3%81%86%E3%81%BE%E3%81%84%E7%89%A9%E3%82%92%E9%A3%9F%E3%81%A3%E3%81%A6%E5%B8%B0%E3%82%8B.webm" target="_blank">commons.wikimedia.org</a>
+    · 协议原文：<a href="https://creativecommons.org/licenses/by/3.0" target="_blank">CC BY 3.0</a><br>
+    字幕：本地语音识别(faster-whisper)+pykakasi注音+AI翻译自动生成 · Japan Shorts — maysuns.uk
+  </div>
+</footer>
+
+<script>
+const SEGMENTS = [
+  { n:1, file:'media/final_part01.mp4', dur:'4分03秒', title:'第1段·羽田到博多机场·一番市場前' },
+  { n:2, file:'media/final_part02.mp4', dur:'4分02秒', title:'第2段·一番市場的寿司·长浜拉面的由来' },
+  { n:3, file:'media/final_part03.mp4', dur:'4分02秒', title:'第3段·元祖长浜屋的商标之争' },
+  { n:4, file:'media/final_part04.mp4', dur:'4分01秒', title:'第4段·实吃拉面·栉田神社·中洲' },
+  { n:5, file:'media/final_part05.mp4', dur:'4分00秒', title:'第5段·福冈塔全景' },
+  { n:6, file:'media/final_part06.mp4', dur:'1分35秒', title:'第6段·深夜回程' },
+];
+
+let currentSeg = 1;
+
+function selectSegment(n, autoplay){
+  currentSeg = n;
+  document.querySelectorAll('.seg-tabs button').forEach(b=>b.classList.toggle('active', +b.dataset.n === n));
+  const seg = SEGMENTS[n-1];
+  const player = document.getElementById('player');
+  player.src = seg.file;
+  document.getElementById('segMeta').textContent = seg.title + '　·　' + seg.dur;
+  if (autoplay) {
+    // 直接播放，不需要再点一次原生播放键（这是2026-09-22按反馈改的：
+    // 因为selectSegment永远是"点击"事件直接触发的，浏览器允许这种情况下带声音自动播放）
+    player.play().catch(()=>{ /* 极少数浏览器仍会拦截，静默失败不报错，用户手动点播放键即可 */ });
+  }
+  renderFeature(document.querySelector('.feature-tabs button.active')?.dataset.f || 'transcript');
+}
+
+const tabsEl = document.getElementById('segTabs');
+tabsEl.innerHTML = SEGMENTS.map(s => `<button data-n="${s.n}">${s.n}</button>`).join('');
+tabsEl.addEventListener('click', e => {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+  selectSegment(+btn.dataset.n, true);
+});
+
+document.getElementById('featureTabs').addEventListener('click', e => {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+  document.querySelectorAll('.feature-tabs button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderFeature(btn.dataset.f);
+});
+
+function esc(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+function fmtTs(sec){ const m=Math.floor(sec/60), s=Math.floor(sec%60); return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0'); }
+
+function renderFeature(kind){
+  const body = document.getElementById('featureBody');
+  if (kind === 'transcript') {
+    const lines = (TRANSCRIPTS[currentSeg] || []);
+    body.innerHTML = lines.map((l,li) => `
+      <div class="transcript-line">
+        <span class="ts">[${fmtTs(l.start)}-${fmtTs(l.end)}]</span>
+        <div class="jp">${esc(l.reading || l.text)}</div>
+        <div class="zh">→ ${esc(window.subLine ? subLine('hakata', currentSeg, li, l.zh || '') : (l.zh || ''))}</div>
+      </div>`).join('') || '<p style="color:var(--sub)">（这一段暂无数据）</p>';
+  } else if (kind === 'grammar') {
+    const items = (GRAMMAR[currentSeg] || []);
+    body.innerHTML = items.map((g0,gi) => { const g = window.gvItem ? gvItem('G', currentSeg, gi, g0) : g0; return `
+      <div class="g-card">
+        <h4><span class="pt">${esc(g.point)}</span> — ${esc(g.meaning)}</h4>
+        <div class="quote">原句：「${esc(g.quote)}」</div>
+        <div class="explain">${g.explain}</div>
+        <a class="link" href="${g.link}" target="_blank">📚 查更多同级语法点 →</a>
+      </div>`; }).join('') || '<p style="color:var(--sub)">（这一段暂无整理）</p>';
+  } else {
+    const items = (VOCAB[currentSeg] || []);
+    body.innerHTML = items.map((v0,vi) => { const v = window.gvItem ? gvItem('V', currentSeg, vi, v0) : v0; return `
+      <div class="v-card">
+        <span class="kind">${esc(v.kind)}</span>
+        <h4 style="margin-top:6px;">${esc(v.term)}</h4>
+        <div class="explain">${v.explain}</div>
+        ${v.link ? `<a class="link" href="${v.link}" target="_blank">🔗 ${esc(v.linkLabel||'查看更多')} →</a>` : ''}
+        ${v.img ? `<img class="food-img" src="${v.img}" alt="${esc(v.term)}" loading="lazy">` : ''}
+      </div>`; }).join('') || '<p style="color:var(--sub)">（这一段暂无整理）</p>';
+  }
+}
+
+// ── 完整台词（每段真实数据，从transcript_trilingual.json按段切出）──
+// 数据量较大，用外部脚本注入，见下方 <script src="assets/hakata_transcripts.js">
+// 注意：selectSegment()内部会调用renderFeature()，而renderFeature()要用到
+// TRANSCRIPTS/GRAMMAR/VOCAB这几个外部脚本里定义的变量——所以初始化必须放在
+// 外部脚本加载完之后，不能在这里立刻调用（2026-09-22真机测试时发现的真bug：
+// 页面一加载就报"TRANSCRIPTS is not defined"，就是因为这里调用得太早了）。
+document.querySelector('.seg-tabs button[data-n="1"]').classList.add('active');
+document.getElementById('player').src = SEGMENTS[0].file;
+document.getElementById('segMeta').textContent = SEGMENTS[0].title + '　·　' + SEGMENTS[0].dur;
+</script>
+<script src="assets/hakata_transcripts.js"></script>
+<script>selectSegment(1, false);</script>
+<script src="assets/subtitles_i18n.js"></script>
+<script src="assets/hakata_i18n.js"></script>
+<script src="assets/i18n.js"></script>
+</body></html>

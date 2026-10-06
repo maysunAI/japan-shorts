@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>素材与版权 — Japan Shorts</title>
+<meta name="description" content="Japan Shorts所有视频素材均来自Wikimedia Commons知识共享(CC)授权内容，本页说明来源、授权类型与已知的字幕识别限制。">
+<link rel="canonical" href="https://shorts.maysuns.uk/sources.html">
+<style>
+  :root { --accent:#c8102e; --bg:#f6f5f2; --card:#ffffff; --border:#e6e3dd; --text:#1c1c1c; --sub:#767267; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,"Segoe UI","Microsoft YaHei","Hiragino Sans",sans-serif; margin:0; background:var(--bg); color:var(--text); }
+  a { color:inherit; }
+  #topbar { position:sticky; top:0; z-index:20; background:var(--card); border-bottom:2px solid var(--accent); padding:10px 24px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  #topbar .logo { font-size:1.15em; font-weight:700; text-decoration:none; }
+  #topbar .logo .jp { color:var(--accent); }
+  #topbar nav { display:flex; gap:16px; flex-wrap:wrap; font-size:0.92em; margin-left:auto; }
+  #topbar nav a { text-decoration:none; color:var(--sub); }
+  #topbar nav a:hover, #topbar nav a.current { color:var(--accent); font-weight:600; }
+  main { max-width:760px; margin:0 auto; padding:34px 20px 70px; }
+  h1 { font-size:1.5em; }
+  .info-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 22px; line-height:1.8; font-size:0.95em; margin-bottom:16px; }
+  .info-card h4 { margin:0 0 8px; }
+  .info-card.warn { border-color:#f0c98a; background:#fffaf0; }
+  .info-card.warn h4 { color:#a35b00; }
+  .example-error { background:#fdeceb; border:1px dashed #f4c9c5; padding:8px 12px; border-radius:8px; font-size:0.9em; margin-top:8px; }
+  .limits-list { line-height:1.9; }
+  footer { text-align:center; color:var(--sub); font-size:0.8em; padding:36px 0 50px; border-top:1px solid var(--border); margin-top:40px; }
+</style>
+</head>
+<body>
+<div id="topbar">
+  <a class="logo" href="index.html"><span class="jp">Japan</span> Shorts</a>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="videos.html">精选短片</a>
+    <a href="method.html">精聴学习法</a>
+    <a href="sources.html" class="current">素材与版权</a>
+  </nav>
+</div>
+<main>
+  <h1>素材与版权</h1>
+  <div class="info-card">
+    <h4>素材从哪来</h4>
+    Wikimedia Commons「Videos in Japanese」分类下，目前已核实约 700 条知识共享（CC）
+    授权的日语视频；主力使用其中 Suit(YouTuber) 的旅行/日常 vlog 系列（约 201 条，
+    CC BY 3.0，语速自然、话题是日常生活，适合精聴练习）。每条视频使用前都会调用
+    Commons 官方 API 重新核对一次授权类型，只放行 <b>CC0 / CC BY / CC BY-SA</b> 三种。
+  </div>
+  <div class="info-card warn">
+    <h4>字幕可能有识别错误，这是真实存在的限制</h4>
+    字幕不是视频官方自带的，是本地语音识别（faster-whisper）自动转写生成的，
+    没有经过人工逐句校对，会出现听错字的情况。比如「日帰り九州」这条短片里，「博多
+    （はかた）」两次被自动识别成了「墓多」，「山笠（やまかさ）」祭典被听成了「ダッシュ」
+    ——这类错误目前会原样保留在字幕里，精聴时请自己判断，不要把字幕当作绝对正确的官方文本。
+    <div class="example-error">识别结果原句：「福岡<b>墓多</b>のラーメンだけが…」　→　实际应为「福岡<b>博多</b>のラーメンだけが…」</div>
+  </div>
+  <div class="info-card">
+    <h4>语法点/词汇解释是怎么来的</h4>
+    每条视频详情页的"语法点"和"词汇/地名/美食"内容，是从这条视频真实台词里挑出来
+    人工整理的（不是套模板编的示例句），用于辅助理解，不是权威语法教材。地名/文化词
+    解释尽量附了维基百科等外部链接方便深入了解，语法点附了JLPT分级语法参考站的链接。
+  </div>
+  <div class="info-card">
+    <h4>关于本站（如实说明）</h4>
+    <ul class="limits-list">
+      <li>目前"日帰り九州"、"犬の焼きいも屋さん"、"銀座を探検"这3条视频已经可以看，其余视频仍在陆续制作中。</li>
+      <li>没有做竖屏版式——现在成片是固定的 1920×1080 横版布局。</li>
+      <li>本站提供中文、英文、日文三种界面；英文和日文的字幕翻译由 AI 根据中文字幕转译，没有母语者校对，可能有错误。</li>
+    </ul>
+  </div>
+</main>
+<footer>
+  Japan Shorts — 日本生活・旅游短片精听 · 素材来源 Wikimedia Commons（CC BY 3.0）<br>
+  <a href="internal/" style="color:var(--sub); font-size:0.9em;">🔒 团队内部页面</a>
+</footer>
+<script src="assets/i18n.js"></script>
+</body></html>
